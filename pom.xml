@@ -15,6 +15,7 @@
     <groupId>com.azure</groupId>
     <artifactId>springboot-azure</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>springboot-azure</name>
     <description>Spring Boot application for Azure integration</description>
 
@@ -47,10 +48,19 @@
     </dependencies>
 
     <build>
+        <finalName>app</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <excludes>
+                        <exclude>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                        </exclude>
+                    </excludes>
+                </configuration>
             </plugin>
         </plugins>
     </build>
